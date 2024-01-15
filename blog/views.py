@@ -28,4 +28,4 @@ def home(requests):
     return render(requests, 'blog\home.html', context)
 
 def about(requests):
-    return render(requests, 'about.html')
+    return render(requests, 'about.html',{'title':'About'})
