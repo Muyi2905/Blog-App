@@ -2,11 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
 
-dummy_posts =[
+posts =[
     {
-        'author': 'Money Mase',
-        'book_title' : 'manchester',
-        'content': 'i love chelsea, i lied',
+        'author': 'Redice',
+        'book_title' : 'Solo Levelling',
+        'content': 'Hunter Sung-jun woo',
         'date_posted': '10 January,2024'
         
     },
@@ -21,10 +21,11 @@ dummy_posts =[
 ]
 
 
-
-
 def home(requests):
-    return render(requests, 'blog\home.html')
+    context = {
+        'posts':posts
+    }    
+    return render(requests, 'blog\home.html', context)
 
 def about(requests):
     return render(requests, 'about.html')
